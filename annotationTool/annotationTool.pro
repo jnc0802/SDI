@@ -18,7 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    unittest.cpp
+    testingunit.cpp
 
 HEADERS += \
     mainwindow.h
@@ -26,6 +26,7 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+LIBS += -lboost_unit_test_framework
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

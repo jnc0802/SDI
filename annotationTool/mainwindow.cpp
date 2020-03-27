@@ -36,7 +36,7 @@ void MainWindow::on_directoryTree_clicked(const QModelIndex &index)
 //Clicking over the list view loads images to the label
 void MainWindow::on_fileList_clicked(const QModelIndex &index)
 {
-    QString imageName = QFileDialog::getOpenFileName(this, tr("Pick an image"),"",tr("Images(*.jpg *.jpeg *.gif *.png"));
+    QString imageName = file->fileInfo(index).absoluteFilePath();
     //if imageName is not equal to 0 and valid is True, display on label
     if (QString::compare(imageName, QString()) != 0)
     {
@@ -50,3 +50,4 @@ void MainWindow::on_fileList_clicked(const QModelIndex &index)
 
     }
 }
+
