@@ -42,8 +42,3 @@ LinkedList::~LinkedList(void){
 
 }
 
-QFileInfo LinkedList::rtnFirst(){
-    Node* firstNode = head;
-    QString name = firstNode->Data.fileName();
-    return name;
-}

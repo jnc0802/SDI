@@ -20,7 +20,6 @@ public:
     int FindNode(QFileInfo x);
     int DeleteNode(QFileInfo x);
     void DisplayList(void);
-    QFileInfo rtnFirst();
 };
 
 #endif // LINKEDLIST_H
