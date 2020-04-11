@@ -5,21 +5,20 @@
 
 class LinkedList
 {
-public:
+
+private:
     struct Node{
         QFileInfo Data;
-        Node* next;
+        Node* Next;
     };
-
     Node* head;
-    LinkedList(void){head=NULL;}
-    ~LinkedList(void);
-
-    bool IsEmpty();
-    Node* InsertNode(int index, QFileInfo x);
-    int FindNode(QFileInfo x);
-    int DeleteNode(QFileInfo x);
-    void DisplayList(void);
+    Node* curr;
+public:
+    LinkedList(){head=NULL;}
+    void insertNode(QFileInfo file);
+    void deleteNode(QFileInfo file);
+    QString Name(QFileInfo x);
+    QString fPath(QString x);
 };
 
 #endif // LINKEDLIST_H

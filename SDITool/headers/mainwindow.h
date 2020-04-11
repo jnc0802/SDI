@@ -22,6 +22,8 @@ private slots:
 
     void on_FileList_clicked(const QModelIndex &index);
 
+    void on_FileList_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MainWindow *ui;
     QFileSystemModel *file;
