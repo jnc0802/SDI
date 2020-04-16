@@ -3,7 +3,7 @@
 #include "headers/linkedlist.h"
 #include <iostream>
 
-
+LinkedList List;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -18,18 +18,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_FileBtn_clicked()
 {
-    LinkedList List;
+
     QFileInfo newFile = QFileDialog::getOpenFileName(
                 this, tr("Choose a File"),
                 "C://",
                 "Img Files (*.jpg *.jpeg *.png *.gif)");
-    List.insertNode(newFile);
-    ui->FileList->addItem(List.Name(newFile));
-
-
+    List.insertNode(newFile.fileName(),newFile.absoluteFilePath());
+    ui->FileList->addItem(newFile.fileName());
 }
 
-void MainWindow::on_FileList_itemClicked(QListWidgetItem *item)
+
+
+void MainWindow::on_FileList_clicked(const QModelIndex &index)
 {
-
+    QString fName = ui->FileList->currentItem()->text();
+    ui->ClassList->addItem(List.fPath(fName));
 }
+

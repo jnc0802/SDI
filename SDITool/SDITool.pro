@@ -31,7 +31,8 @@ SOURCES += \
 
 HEADERS += \
     headers/linkedlist.h \
-    headers/mainwindow.h
+    headers/mainwindow.h \
+    headers/node.h
 
 FORMS += \
         mainwindow.ui

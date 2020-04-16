@@ -1,41 +1,37 @@
 #include "headers/linkedlist.h"
+#include <cstdlib>
+#include <iostream>
 
-void LinkedList::insertNode(QFileInfo file)
+
+Node* LinkedList::insertNode(QString name, QString path)
 {
-    Node* newNode = new Node;
-    newNode->Next=NULL;
-    newNode->Data=file;
-    if(head==NULL){
-        head = newNode;
-
-    }
-    else
-    {
-        curr = head;
-        while(curr->Next != NULL)
-        {
-            curr = curr->Next;
+    int nodeNum=0;
+    Node* temp = new Node;
+        temp->Name = name;
+        temp->fPath = path;
+        temp->Next = NULL;
+        if (head == NULL) {
+            head = temp;
+            tail = temp;
+            temp = NULL;
+            nodeNum++;
         }
-        curr->Next=newNode;
-    }
+        else
+        {
+            tail->Next = temp;
+            tail = temp;
+            nodeNum++;
+        }
+        return 0;
+
 }
 
-QString LinkedList::Name(QFileInfo x)
-{
-    curr = head;
-    while(curr->Data != x)
-    {
-        curr = curr->Next;
-    }
-    return curr->Data.fileName();
-}
 
 QString LinkedList::fPath(QString x)
 {
-    curr = head;
-    while(curr->Data.fileName() != x)
-    {
-        curr = curr->Next;
+    curr=head;
+    while(curr->Name!=x){
+        curr=curr->Next;
     }
-    return curr->Data.absoluteFilePath();
+    return curr->fPath;
 }

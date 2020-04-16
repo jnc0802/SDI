@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QListWidgetItem>
 #include <QFileDialog>
 #include <QFileSystemModel>
 
@@ -20,9 +21,8 @@ public:
 private slots:
     void on_FileBtn_clicked();
 
-    void on_FileList_clicked(const QModelIndex &index);
 
-    void on_FileList_itemClicked(QListWidgetItem *item);
+    void on_FileList_clicked(const QModelIndex &index);
 
 private:
     Ui::MainWindow *ui;

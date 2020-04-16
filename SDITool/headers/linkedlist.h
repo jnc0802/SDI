@@ -2,23 +2,18 @@
 #define LINKEDLIST_H
 #include "mainwindow.h"
 #include <QFileInfo>
+#include "node.h"
 
-class LinkedList
-{
-
-private:
-    struct Node{
-        QFileInfo Data;
-        Node* Next;
-    };
+class LinkedList {
+private: // Should be private have a look at
     Node* head;
     Node* curr;
+    Node* tail;
 public:
-    LinkedList(){head=NULL;}
-    void insertNode(QFileInfo file);
-    void deleteNode(QFileInfo file);
-    QString Name(QFileInfo x);
-    QString fPath(QString x);
+    LinkedList(void) { head = NULL; tail = NULL; }
+    Node* insertNode(QString, QString);
+    Node* deleteNode(QFileInfo);
+    QString fPath(QString);
 };
 
 #endif // LINKEDLIST_H
