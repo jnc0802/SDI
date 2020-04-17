@@ -32,6 +32,10 @@ void MainWindow::on_FileBtn_clicked()
 void MainWindow::on_FileList_clicked(const QModelIndex &index)
 {
     QString fName = ui->FileList->currentItem()->text();
-    ui->ClassList->addItem(List.fPath(fName));
+    QString path= List.fPath(fName);
+    QImage img= QImage(path);
+    scene = new QGraphicsScene(this);
+    scene->addPixmap(QPixmap::fromImage(img));
+    ui->ImgView->setScene(scene);
 }
 

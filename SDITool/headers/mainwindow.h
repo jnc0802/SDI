@@ -5,6 +5,7 @@
 #include <QListWidgetItem>
 #include <QFileDialog>
 #include <QFileSystemModel>
+#include <QGraphicsView>
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,7 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QFileSystemModel *file;
+    QGraphicsScene *scene;
 };
 
 #endif // MAINWINDOW_H

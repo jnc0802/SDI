@@ -35,3 +35,11 @@ QString LinkedList::fPath(QString x)
     }
     return curr->fPath;
 }
+
+QString LinkedList::sortAlpha()
+{
+    curr=head;
+    if(curr->Name>curr->Next->Name){
+
+    }
+}

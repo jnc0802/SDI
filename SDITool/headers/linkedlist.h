@@ -12,8 +12,8 @@ private: // Should be private have a look at
 public:
     LinkedList(void) { head = NULL; tail = NULL; }
     Node* insertNode(QString, QString);
-    Node* deleteNode(QFileInfo);
     QString fPath(QString);
+    QString sortAlpha();
 };
 
 #endif // LINKEDLIST_H

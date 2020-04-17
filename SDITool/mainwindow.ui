@@ -60,7 +60,7 @@
      <string>Browse</string>
     </property>
    </widget>
-   <widget class="QGraphicsView" name="graphicsView">
+   <widget class="QGraphicsView" name="ImgView">
     <property name="geometry">
      <rect>
       <x>290</x>
