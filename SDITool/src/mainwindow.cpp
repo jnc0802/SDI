@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
@@ -25,6 +26,7 @@ void MainWindow::on_FileBtn_clicked()
                 "Img Files (*.jpg *.jpeg *.png *.gif)");
     List.insertNode(newFile.fileName(),newFile.absoluteFilePath());
     ui->FileList->addItem(newFile.fileName());
+
 }
 
 
@@ -34,8 +36,25 @@ void MainWindow::on_FileList_clicked(const QModelIndex &index)
     QString fName = ui->FileList->currentItem()->text();
     QString path= List.fPath(fName);
     QImage img= QImage(path);
+
     scene = new QGraphicsScene(this);
     scene->addPixmap(QPixmap::fromImage(img));
     ui->ImgView->setScene(scene);
 }
 
+
+void MainWindow::on_SortAlpha_clicked()
+{
+    List.sortAlpha();
+    ui->FileList->clear();
+
+}
+
+void MainWindow::on_DrawBtn_clicked()
+{
+    QPen redBrush(Qt::red);
+    redBrush.setWidth(2);
+    rectangle = scene->addRect(10,10,100,100,redBrush);
+    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
+    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
+}

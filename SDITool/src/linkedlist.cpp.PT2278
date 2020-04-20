@@ -40,13 +40,22 @@ QString LinkedList::fPath(QString x)
 
 void LinkedList::sortAlpha()
 {
+    curr=head;
+    Node* temp;
+    for(int i = nodeNum; i>0;i--){
+        for(int j = 0; j<i;j++){
+            if(curr->Name.at(0) > curr->Next->Name.at(0)){
 
+            }
+        }
+    }
 
 }
 
 QString LinkedList::displayList()
 {
-
+    curr=head;
+    return head->Name;
 
 
 }

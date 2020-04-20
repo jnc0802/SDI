@@ -6,6 +6,11 @@
 #include <QFileDialog>
 #include <QFileSystemModel>
 #include <QGraphicsView>
+#include <QtCore>
+#include <QtGui>
+#include <QDialog>
+#include <QGraphicsRectItem>
+
 
 namespace Ui {
 class MainWindow;
@@ -25,10 +30,15 @@ private slots:
 
     void on_FileList_clicked(const QModelIndex &index);
 
+    void on_SortAlpha_clicked();
+
+    void on_DrawBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     QFileSystemModel *file;
     QGraphicsScene *scene;
+    QGraphicsRectItem *rectangle;
 };
 
 #endif // MAINWINDOW_H

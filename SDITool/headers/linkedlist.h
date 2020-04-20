@@ -9,11 +9,14 @@ private: // Should be private have a look at
     Node* head;
     Node* curr;
     Node* tail;
+    int nodeNum=0;
+
 public:
     LinkedList(void) { head = NULL; tail = NULL; }
     Node* insertNode(QString, QString);
     QString fPath(QString);
-    QString sortAlpha();
+    void sortAlpha();
+    QString displayList();
 };
 
 #endif // LINKEDLIST_H
