@@ -105,9 +105,6 @@
       <height>25</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

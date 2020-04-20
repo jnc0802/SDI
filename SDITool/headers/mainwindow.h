@@ -10,6 +10,7 @@
 #include <QtGui>
 #include <QDialog>
 #include <QGraphicsRectItem>
+#include "headers/shapes.h"
 
 
 namespace Ui {
@@ -38,7 +39,7 @@ private:
     Ui::MainWindow *ui;
     QFileSystemModel *file;
     QGraphicsScene *scene;
-    QGraphicsRectItem *rectangle;
+    Shapes *rectangle;
 };
 
 #endif // MAINWINDOW_H

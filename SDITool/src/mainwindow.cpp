@@ -52,9 +52,6 @@ void MainWindow::on_SortAlpha_clicked()
 
 void MainWindow::on_DrawBtn_clicked()
 {
-    QPen redBrush(Qt::red);
-    redBrush.setWidth(2);
-    rectangle = scene->addRect(10,10,100,100,redBrush);
-    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
-    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
+    rectangle = new Shapes;
+    scene->addItem(rectangle);
 }

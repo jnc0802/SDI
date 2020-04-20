@@ -27,12 +27,14 @@ SOURCES += \
     Tests/unittest.cpp \
     src/mainwindow.cpp \
     src/main.cpp \
-    src/linkedlist.cpp
+    src/linkedlist.cpp \
+    src/shapes.cpp
 
 HEADERS += \
     headers/linkedlist.h \
     headers/mainwindow.h \
-    headers/node.h
+    headers/node.h \
+    headers/shapes.h
 
 FORMS += \
         mainwindow.ui
