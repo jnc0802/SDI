@@ -2,6 +2,7 @@
 #define LINKEDLIST_H
 #include "mainwindow.h"
 #include <QFileInfo>
+#include <QDebug>
 #include "node.h"
 
 class LinkedList {
@@ -16,7 +17,7 @@ public:
     Node* insertNode(QString, QString);
     QString fPath(QString);
     void sortAlpha();
-    QString displayList();
+    QStringList displayList();
 };
 
 #endif // LINKEDLIST_H

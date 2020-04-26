@@ -3,14 +3,17 @@
 
 #include <QMainWindow>
 #include <QListWidgetItem>
+#include <QTextEdit>
 #include <QFileDialog>
 #include <QFileSystemModel>
 #include <QGraphicsView>
 #include <QtCore>
 #include <QtGui>
 #include <QDialog>
+#include <QDebug>
 #include <QGraphicsRectItem>
 #include "headers/shapes.h"
+#include "headers/classfile.h"
 
 
 namespace Ui {
@@ -35,11 +38,16 @@ private slots:
 
     void on_DrawBtn_clicked();
 
+    void on_ClassBtn_clicked();
+
+    void on_ClassList_clicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     QFileSystemModel *file;
     QGraphicsScene *scene;
     Shapes *rectangle;
+
 };
 
 #endif // MAINWINDOW_H

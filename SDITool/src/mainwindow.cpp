@@ -4,11 +4,13 @@
 #include <iostream>
 
 LinkedList List;
+ClassFile newCFile;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 
 }
 
@@ -39,7 +41,9 @@ void MainWindow::on_FileList_clicked(const QModelIndex &index)
 
     scene = new QGraphicsScene(this);
     scene->addPixmap(QPixmap::fromImage(img));
+    ui->ImgView->setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     ui->ImgView->setScene(scene);
+
 }
 
 
@@ -47,11 +51,35 @@ void MainWindow::on_SortAlpha_clicked()
 {
     List.sortAlpha();
     ui->FileList->clear();
-
+    ui->FileList->addItems(List.displayList());
 }
 
 void MainWindow::on_DrawBtn_clicked()
 {
+    ui->ClassList->clear();
+    QString NewClass = ui->ClassName->text();
+    newCFile.addTOFile(NewClass);
+    ui->ClassList->addItems(newCFile.readFile());
+
+}
+
+void MainWindow::on_ClassBtn_clicked()
+{
+    ui->ClassList->clear();
+    QFileInfo classFile = QFileDialog::getOpenFileName(
+                this, tr("Choose a File"),
+                "C://",
+                "Class Files (*.names)");
+    newCFile.addFile(classFile.absoluteFilePath());
+    ui->ClassList->addItems(newCFile.readFile());
+}
+
+void MainWindow::on_ClassList_clicked(const QModelIndex &index)
+{
+    QString cName = ui->ClassList->currentItem()->text();
     rectangle = new Shapes;
+    rectangle->setState(cName);
     scene->addItem(rectangle);
 }
+
+

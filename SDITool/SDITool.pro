@@ -28,13 +28,15 @@ SOURCES += \
     src/mainwindow.cpp \
     src/main.cpp \
     src/linkedlist.cpp \
-    src/shapes.cpp
+    src/shapes.cpp \
+    src/classfile.cpp
 
 HEADERS += \
     headers/linkedlist.h \
     headers/mainwindow.h \
     headers/node.h \
-    headers/shapes.h
+    headers/shapes.h \
+    headers/classfile.h
 
 FORMS += \
         mainwindow.ui
